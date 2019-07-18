@@ -180,7 +180,7 @@ class UI {
 /********************************************************************************************************** */
 
 //RESET TEAMS
-Store.deleteTeams();
+//Store.deleteTeams();
 
 //RESET PLAYERS
 //Store.deletePlayers();
