@@ -186,7 +186,7 @@ class UI {
 //Store.deletePlayers();
 
 //Constant to determine changes over time
-const K = 30;
+const K = 50;
 
 //Grab teams from storage
 var teamList = Store.getTeams();
@@ -352,8 +352,8 @@ function validateGame(player1, player2, player3, player4) {
 function calculateElo(team1Name, team2Name) {
     team1 = getTeam(team1Name);
     team2 = getTeam(team2Name);
-    const probability1 = (1.0 / (1.0 + Math.pow(10, ((team1.elo-team2.elo)/400))));
-    const probability2 = (1.0 / (1.0 + Math.pow(10, ((team2.elo-team1.elo)/400))));
+    const probability1 = (1.0 / (1.0 + Math.pow(10, ((team2.elo-team1.elo)/400))));
+    const probability2 = (1.0 / (1.0 + Math.pow(10, ((team1.elo-team2.elo)/400))));
     team1.elo = team1.elo + (K * (1 - probability1));
     team2.elo = team2.elo + (K * (0 - probability2));
     team1.gamesWon++;
